@@ -19,7 +19,7 @@ The above obstacle avoidance constraint can also be formulated using SDP relaxat
 $$
 \begin{aligned}
     y_1 + \dots + y_N &= p \\
-    A_i y_i &\leq (b_i - A_i r) \left(\frac{\theta_i + 1}{2}\right), \quad i = 1, \dots, N \\
+    A_i y_i &\leq (b_i - a_i r) \left(\frac{\theta_i + 1}{2}\right), \quad i = 1, \dots, N \\
     \theta_1 + \dots + \theta_N &= 2 - N, \quad \theta_i \in \\{-1, 1\\} 
 \end{aligned}\tag{2}
 $$
@@ -44,7 +44,7 @@ $$
     \text{minimize}(\\{y_i\\},\Theta) &-d*p \\
     \theta_1 + \dots + \theta_N &= 2 - N, \quad \theta_i \in \\{-1, 1\\} \\
     \forall i = 1, \dots, N:\\
-    A_i y_i &\leq (b_i - A_i r) \left(\frac{\theta_i + 1}{2}\right)\\
+    A_i y_i &\leq (b_i - a_i r) \left(\frac{\theta_i + 1}{2}\right)\\
     \Theta_i(1,1)=\Theta_i(2,2) &= 1\\
     \Theta_i &\succeq0\\
     \text{rank}(\Theta_i) &= 1
