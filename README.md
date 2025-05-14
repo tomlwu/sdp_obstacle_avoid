@@ -7,7 +7,7 @@ The obstacle avoidance constraint can be formulated as mixed-integer constraints
 $$
 \begin{aligned}
 y_1 + \dots + y_N = p \\
-A_i y_i \leq (b_i - A_i r) z_i, \quad i = 1, \dots, N \\
+A_i y_i \leq (b_i - \left\\|A_i\right\\| r) z_i, \quad i = 1, \dots, N \\
 z_1 + \dots + z_N = 1, \quad z_i \in \\{0, 1\\}
 \end{aligned}\tag{1}
 $$
