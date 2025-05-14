@@ -2,12 +2,12 @@
 This project performs robot obstacle avoidance using SDP and rank minimization
 
 ## Problem statement
-The obstacle avoidance constraint can be formulated as mixed-integer constraints as discussed in [1] and [2]. Suppose the collision-free workspace is decomposed into N convex polytopes excluding the obstacles. Each polytope is parameterized as $\mathcal{P}_i=\\{ x|A_ix\leq b_i \\}$. Suppose the collision body of a robot is modeled as a sphere centered at $p$ with radius $r$. The sphere being confined in the ith polytope can be written as the condition $A_ip\leq b_i-a_i r$, where $a_i(j)=|A_i(j,:)|$. The obstacle avoidance constraint is to restrict the sphere in one of the convex polytope, which can be written as
+The obstacle avoidance constraint can be formulated as mixed-integer constraints as discussed in [1] and [2]. Suppose the collision-free workspace is decomposed into N convex polytopes excluding the obstacles. Each polytope is parameterized as $\mathcal{P}_i=\\{ x|A_ix\leq b_i \\}$. Suppose the collision body of a robot is modeled as a sphere centered at $p$ with radius $r$. The sphere being confined in the ith polytope can be written as the condition $A_ip\leq b_i-a_i r$, where $a_i(j)=\left\\|A_i(j,:)\right\\|$. The obstacle avoidance constraint is to restrict the sphere in one of the convex polytope, which can be written as
 
 $$
 \begin{aligned}
 y_1 + \dots + y_N = p \\
-A_i y_i \leq (b_i - \left\\|A_i\right\\| r) z_i, \quad i = 1, \dots, N \\
+A_i y_i \leq (b_i - a_i r) z_i, \quad i = 1, \dots, N \\
 z_1 + \dots + z_N = 1, \quad z_i \in \\{0, 1\\}
 \end{aligned}\tag{1}
 $$
